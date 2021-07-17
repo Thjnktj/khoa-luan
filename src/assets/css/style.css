@@ -98,3 +98,307 @@
   cursor: pointer;
 }
 
+ button.ant-btn {
+  margin: 0 10px;
+}
+
+.btn-button {
+  width: auto;
+  height: auto;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  color: #2c5b4e;
+  background-color: rgb(202 202 202);
+  margin-top: 10px;
+}
+
+.ant-tabs > .ant-tabs-nav .ant-tabs-nav-add {
+  display: none;
+}
+
+/*Side bar*/
+#sidebar-wrapper {
+  /* position: absolute; */
+  top: 64px;
+  left: 0px;
+  height: calc(100vh - 50px);
+  transition: all 0.5s ease;
+  position: fixed;
+  width: 200px;
+}
+
+.sidebar_container {
+  background-color: #333547;
+  margin-bottom: 15px;
+  overflow-y: scroll;
+}
+.sidebar_menus {
+  background-color: #333547; 
+  color: #fff;
+  font-size: 15px;
+}
+
+
+ul#item_4\$Menu {
+  background: #333547;
+} 
+
+ 
+
+.logo {
+  height: 26px;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  line-height: 1;
+}
+
+.logo__img {
+  margin-right: 10px;
+  width: 40%;
+  border-radius: 999px;
+  margin: 0 auto;
+}
+
+.logo p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+input.ant-input {
+  background: #f9f9f9d9;
+}
+
+i.ant-menu-submenu-arrow {
+  color: #ffffff !important;
+}
+
+ 
+
+#check {
+  display: none;
+}
+
+label #icon1 {
+  position: absolute;
+  position: fixed;
+  top: 45px;
+  left: 19px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: -40px;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+label #icon2 {
+  position: absolute;
+  font-size: 22px;
+  cursor: pointer;
+  color: #fff;
+  left: 0px;
+  transition: all 0.5s ease;
+  top: 42px;
+  position: fixed;
+}
+
+#check:checked ~ label #icon1 {
+  left: 40px;
+}
+
+#check:checked ~ #sidebar-wrapper {
+  left: -200px;
+}
+
+#check:checked ~ label #icon2 {
+  left: -20px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#check:checked ~ .site-layout,
+#check:checked ~ footer {
+  margin-left: 0px;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.site-layout {
+  margin-left: 200px;
+  transition: all 0.5s ease;
+  padding-top: 20px;
+  background-color: #bdbdbd;
+  position: fixed;
+  margin-top: 64px;
+  width: 87%;
+}
+
+.content_product {
+  top: 0;
+  overflow-y: scroll;
+  height: 81vh;
+  width: auto;
+  padding: 30px;
+}
+
+.tab_data {
+  margin: 23px;
+  cursor: pointer;
+}
+
+.link_tab {
+  color: black;
+}
+
+/* .link_tab:hover {
+  color: blue;
+} */
+
+input.ant-input {
+  background: none;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #1976d2;
+}
+
+/*Search sidebar */
+.search_sidebar {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  background: #e6f7ff;
+  border-radius: 999px;
+  color: #8699ad;
+  height: auto;
+  margin-top: 70px;
+}
+
+i.ant-menu-submenu-arrow {
+  color: #8699ad;
+}
+
+.sidebar_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 600px;
+}
+
+.headerPd {
+  background-color: #20232a;
+  position: fixed;
+  width: 100%;
+  list-style-type: none;
+  top: 0;
+  position: absolute;
+}
+
+.header__block {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header__img {
+  width: 30%;
+}
+
+.header__name {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff !important;
+}
+
+.header__logo2 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header_menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 28px;
+  cursor: pointer;
+  margin-left: -20px;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+#menuToggle {
+  position: absolute;
+  right: 0;
+  width: 250px;
+  z-index: 1;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  line-height: 3.5;
+}
+
+.menu li:hover {
+  background-color: #4680ff;
+  padding-left: 10px;
+  margin: 5px  ;
+  color: #fff;
+   
+}
+
+.menu a:hover {
+  color: #fff;
+}
+
+
+.menu .menu-logo {
+  background-color: #101b33;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  line-height: 2;
+}
+
+
+.profile_menu {
+  display: grid;
+  grid-template-columns: 30px 100px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.profile_menu a {
+  color: #000;
+}
+
+.menu .menu-logo p {
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  margin-left: 10px;
+  margin-top: 10px; 
+}
+
+@media only screen and (max-width: 1300px) {
+  .header__name {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .header__name {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header__name {
+    font-size: 10px;
+  }
+}
+

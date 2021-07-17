@@ -1,9 +1,9 @@
 import React from "react";
 import { Layout } from "antd";
-import '../../assets/css/style.css';
+import "../../assets/css/style.css";
 const { Header } = Layout;
 
-function Headers() {
+function Headers(props) {
   return (
     <Header className="header">
       <div className="header__block">
@@ -15,6 +15,7 @@ function Headers() {
           <img src="/images/logo.svg" className="header__img" alt="" />
         </div>
       </div>
+      {props.children}
     </Header>
   );
 }

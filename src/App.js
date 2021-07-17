@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import Login from "./layouts/auth/Login";
 import Headers from "./layouts/screen/Header";
-import Footers from "./layouts/screen/Footer";
 import { getAllProducts, getAllTab, isUserLogin } from "./redux/actions";
 import { routes } from "./routers";
 import PrivateRoute from "./routers/private.router";
@@ -20,23 +19,23 @@ function App() {
     dispatch(getAllTab());
   }, [auth, dispatch]);
   return (
-    <div>
-      <Headers />
-      <Switch>
-        {routes.map((route, index) => {
-          return (
-            <PrivateRoute
-              key={index}
-              path={route.root + route.path}
-              exact={route.exact}
-              component={route.component}
-            />
-          );
-        })}
-        <Route to="/" component={Login} />
-      </Switch>
-      <Footers />
-    </div>
+    <>
+      <Headers>
+        <Switch>
+          {routes.map((route, index) => {
+            return (
+              <PrivateRoute
+                key={index}
+                path={route.root + route.path}
+                exact={route.exact}
+                component={route.component}
+              />
+            );
+          })}
+          <Route to="/" component={Login} />
+        </Switch>
+      </Headers>
+    </>
   );
 }
 
