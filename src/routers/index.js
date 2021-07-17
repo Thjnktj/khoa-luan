@@ -1,9 +1,9 @@
-import Dashbroad from "../pages/dashbroad";
+import Dashboard from "../pages/Dashboard";
 
 export const routes = [
   {
     path: "/dashboard",
-    component: Dashbroad,
+    component: Dashboard,
     root: "",
   },
 ];
