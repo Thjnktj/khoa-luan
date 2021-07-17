@@ -15,7 +15,6 @@ export const authContants = {
 };
 
 export const tabContants = {
-  GET_TAB_REQUEST: "GET_TAB_REQUEST",
   GET_TAB_SUCCESS: "GET_TAB_SUCCESS",
-  GET_TAB_FAILED: "GET_TAB_FAILED",
+  DELETE_TAB_SUCCESS: "DELETE_TAB_SUCCESS",
 };

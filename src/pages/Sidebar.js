@@ -6,7 +6,9 @@ import {
   SearchOutlined,
 } from "@ant-design/icons";
 import { Link, useRouteMatch } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import Product from "./Product";
+import { createTab } from "../redux/actions";
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
@@ -14,12 +16,14 @@ const { SubMenu } = Menu;
 function Sidebar() {
   const user = useSelector((state) => state.auth.user);
   const sidebar = useSelector((state) => state.products.sidebar);
+  const tabs = useSelector((state) => state.tabs.tabs);
+
+  const dispatch = useDispatch();
 
   let match = useRouteMatch();
   const [searchSidebar, setSearchSidebar] = useState("");
 
   const renderProductList = (data) => {
-    console.log("data", data);
     return data
       ? data
           .filter((val) =>
@@ -27,27 +31,38 @@ function Sidebar() {
               ? val
               : null
           )
-          .map((text) =>
+          .map((text, index) =>
             text.subs.length > 0 ? (
-              <SubMenu key={text.id} title={text.title}>
-                {text.subs.map((item) => {
-                  if (item.activated === true)
-                    return (
-                      <Menu.Item key={item.id} path={item.url}>
-                        <Link
-                          to={`${match.url}/${item.url}`}
-                          style={{ fontSize: "16px", color: "#fff" }}
-                        >
-                          {item.title}
-                        </Link>
-                      </Menu.Item>
-                    );
-                  return null;
-                })}
+              <SubMenu key={index} title={text.title}>
+                {text.subs.map((item, index) =>
+                  item.activated ? (
+                    <Menu.Item
+                      key={Number(index) + 10}
+                      path={item.url}
+                      onClick={() => dispatch(createTab(item))}
+                    >
+                      <Link
+                        key={item.id}
+                        to={`${match.url}/${item.url}`}
+                        style={{ fontSize: "16px", color: "#fff" }}
+                      >
+                        {item.title}
+                      </Link>
+                    </Menu.Item>
+                  ) : null
+                )}
               </SubMenu>
             ) : text.activated ? (
-              <Menu.Item key={text.id} path={text.url}>
-                <Link to={`${match.url}/${text.url}`} style={{ color: "#fff" }}>
+              <Menu.Item
+                key={Number(index) + 100}
+                path={text.url}
+                onClick={() => dispatch(createTab(text))}
+              >
+                <Link
+                  key={text.id}
+                  to={`${match.url}/${text.url}`}
+                  style={{ color: "#fff" }}
+                >
                   {text.title}
                 </Link>
               </Menu.Item>
@@ -64,8 +79,8 @@ function Sidebar() {
         <AlignRightOutlined id="icon2" />
       </label>
 
-      <Layout id="sidebar-wrapper">
-        <Sider className="sidebar_container">
+      <Layout id="sidebar-wrapper" key="ab1">
+        <Sider className="sidebar_container" key="123">
           <div className="logo">
             <img src={user.avatarUrl} className="logo__img" alt="" />
             <p style={{ color: "white", textTransform: "capitalize" }}>
@@ -81,25 +96,30 @@ function Sidebar() {
             onChange={(e) => setSearchSidebar(e.target.value)}
           />
           <Menu
+            key="1234"
             mode="inline"
             style={{ marginTop: "10px" }}
             className="sidebar_menus"
             triggerSubMenuAction="hover"
           >
-            {renderProductList(sidebar ? sidebar : [])}
+            {renderProductList(sidebar)}
           </Menu>
         </Sider>
-        <div className="sidebar_image">
-          <img
-            src={user.avatarUrl}
-            alt=""
-            style={{
-              width: "100px",
-              height: "100px",
-              borderRadius: "100px",
-            }}
-          />
-        </div>
+        {tabs.length > 0 ? (
+          <Product />
+        ) : (
+          <div className="sidebar_image">
+            <img
+              src={user.avatarUrl}
+              alt=""
+              style={{
+                width: "100px",
+                height: "100px",
+                borderRadius: "100px",
+              }}
+            />
+          </div>
+        )}
       </Layout>
     </>
   );

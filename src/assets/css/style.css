@@ -1,6 +1,6 @@
 
 .header {
-  background-color: #20232a;
+  background-color: #20232a !important;
   width: 100%;
   font-family: 'Roboto', sans-serif;
   list-style-type: none;
@@ -19,7 +19,7 @@
   text-transform: uppercase;
   font-size: 24px;
   font-weight: bold;
-  color: #ffffff;
+  color: #ffffff !important;
 
 }
 
@@ -66,7 +66,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: #fff !important;
   /* background-image: url('https://demos.creative-tim.com/material-dashboard-pro-react/static/media/register.2dd199e9.jpeg'); */
 }
 
@@ -129,19 +129,19 @@
 }
 
 .sidebar_container {
-  background-color: #333547;
+  background-color: #333547 !important;
   margin-bottom: 15px;
   overflow-y: scroll;
 }
 .sidebar_menus {
-  background-color: #333547; 
-  color: #fff;
+  background-color: #333547 !important; 
+  color: #fff !important;
   font-size: 15px;
 }
 
 
 ul#item_4\$Menu {
-  background: #333547;
+  background: #333547 !important;
 } 
 
  
@@ -149,7 +149,7 @@ ul#item_4\$Menu {
 .logo {
   height: 26px;
   text-align: center;
-  color: #000;
+  color: #000 !important;
   font-weight: bold;
   cursor: pointer;
   margin-bottom: 20px;
@@ -170,7 +170,7 @@ ul#item_4\$Menu {
 }
 
 input.ant-input {
-  background: #f9f9f9d9;
+  background: #f9f9f9d9 !important;
 }
 
 i.ant-menu-submenu-arrow {
@@ -191,7 +191,7 @@ label #icon1 {
   font-size: 20px;
   cursor: pointer;
   margin-left: -40px;
-  color: #fff;
+  color: #fff !important;
   transition: all 0.5s ease;
 }
 
@@ -199,7 +199,7 @@ label #icon2 {
   position: absolute;
   font-size: 22px;
   cursor: pointer;
-  color: #fff;
+  color: #fff !important;
   left: 0px;
   transition: all 0.5s ease;
   top: 42px;
@@ -231,7 +231,7 @@ label #icon2 {
   margin-left: 200px;
   transition: all 0.5s ease;
   padding-top: 20px;
-  background-color: #bdbdbd;
+  background-color: #bdbdbd !important;
   position: fixed;
   margin-top: 64px;
   width: 87%;
@@ -263,7 +263,7 @@ input.ant-input {
 }
 
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-  background-color: #1976d2;
+  background-color: #1976d2 !important;
 }
 
 /*Search sidebar */
@@ -271,15 +271,15 @@ input.ant-input {
   padding: 10px;
   width: 100%;
   border: none;
-  background: #e6f7ff;
+  background: #e6f7ff !important;
   border-radius: 999px;
-  color: #8699ad;
+  color: #8699ad !important;
   height: auto;
   margin-top: 70px;
 }
 
 i.ant-menu-submenu-arrow {
-  color: #8699ad;
+  color: #8699ad !important;
 }
 
 .sidebar_image {
@@ -290,7 +290,7 @@ i.ant-menu-submenu-arrow {
 }
 
 .headerPd {
-  background-color: #20232a;
+  background-color: #20232a !important;
   position: fixed;
   width: 100%;
   list-style-type: none;
@@ -326,7 +326,7 @@ i.ant-menu-submenu-arrow {
   font-size: 28px;
   cursor: pointer;
   margin-left: -20px;
-  color: #fff;
+  color: #fff !important;
   transition: all 0.5s ease;
 }
 
@@ -344,7 +344,7 @@ i.ant-menu-submenu-arrow {
 }
 
 .menu li:hover {
-  background-color: #4680ff;
+  background-color: #4680ff !important;
   padding-left: 10px;
   margin: 5px  ;
   color: #fff;
@@ -357,7 +357,7 @@ i.ant-menu-submenu-arrow {
 
 
 .menu .menu-logo {
-  background-color: #101b33;
+  background-color: #101b33 !important;
   display: flex;
   align-items: center;
   padding-left: 20px;

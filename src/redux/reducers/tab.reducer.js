@@ -9,7 +9,13 @@ const reducer = (state = initialState, action) => {
     case tabContants.GET_TAB_SUCCESS:
       state = {
         ...state,
-        tabs: action.payload.tabs,
+        tabs: [...state.tabs, action.payload.create],
+      };
+      break;
+
+    case tabContants.DELETE_TAB_SUCCESS:
+      state = {
+        ...state,
       };
       break;
     default:
