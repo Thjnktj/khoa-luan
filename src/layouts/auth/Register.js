@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Tools from "../../services/tools";
 import { Form, Input, Button, Spin, message } from "antd";
 import { Link, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { isUserRegister } from "../../redux/actions/auth.action";
 
 const layout = {
   labelCol: { span: 8 },
@@ -14,7 +17,8 @@ const tailLayout = {
 function Register() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [loading] = useState(false);
-  const tokenUser = window.store.datauser;
+  // const tokenUser = window.store.datauser;
+  const dispatch = useDispatch();
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
@@ -25,16 +29,16 @@ function Register() {
     const fullname = value.fullname;
     const password = value.password;
 
-    const l = {
-      username: username,
-      fullname: fullname,
-      activated: true,
-      hashedPass: password,
-      salt: "hung12",
-      avatarUrl: "http://localhost:3000/images/download.png",
-    };
+    // const l = {
+    //   username: username,
+    //   fullname: fullname,
+    //   activated: true,
+    //   hashedPass: password,
+    //   salt: "hung12",
+    //   avatarUrl: "http://localhost:3000/images/download.png",
+    // };
 
-    const user = tokenUser.map((item) => item.username).indexOf(value.username);
+    // const user = tokenUser.map((item) => item.username).indexOf(value.username);
 
     // if (user === -1) {
     //   await PushUser(l);

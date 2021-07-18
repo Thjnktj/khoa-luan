@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./layouts/auth/Login";
 import Register from "./layouts/auth/Register";
 import Headers from "./layouts/screen/Header";
@@ -21,9 +21,10 @@ function App() {
   return (
     <>
       <Headers>
+        <Router>
         <Switch>
-          <Route to="/" exact={true} component={Login} />
-          <Route to="/register" component={Register} />
+          <Route path="/" exact={true} component={Login} />
+          <Route path="/register" component={Register} />
           {routes.map((route, index) => {
             return (
               <PrivateRoute
@@ -35,6 +36,7 @@ function App() {
             );
           })}
         </Switch>
+        </Router>
       </Headers>
     </>
   );
