@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import Login from "./layouts/auth/Login";
+import Register from "./layouts/auth/Register";
 import Headers from "./layouts/screen/Header";
 import { getAllProducts, isUserLogin } from "./redux/actions";
 import { routes } from "./routers";
@@ -21,6 +22,8 @@ function App() {
     <>
       <Headers>
         <Switch>
+          <Route to="/" exact={true} component={Login} />
+          <Route to="/register" component={Register} />
           {routes.map((route, index) => {
             return (
               <PrivateRoute
@@ -31,7 +34,6 @@ function App() {
               />
             );
           })}
-          <Route to="/" component={Login} />
         </Switch>
       </Headers>
     </>

@@ -32,6 +32,7 @@ export const login = (user) => {
 export const isLogOut = () => {
   return async (dispatch) => {
     window.localStorage.clear();
+    window.sessionStorage.clear();
     dispatch({ type: authContants.LOGOUT_SUCCES });
   };
 };
@@ -46,5 +47,17 @@ export const isUserLogin = () => {
         payload: { token, user },
       });
     }
+  };
+};
+
+export const isUserRegister = (username) => {
+  return async () => {
+    let check = true;
+    const res = await axiosClient.get("/root/user");
+    if (res.status === 200) {
+      const data = res.filter((item) => item.username === username);
+      if (data.length > 0) check = false;
+    }
+    return check;
   };
 };

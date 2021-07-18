@@ -8,10 +8,12 @@ export const productContants = {
 };
 
 export const authContants = {
+  GET_ALL_USER: "GET_ALL_USER",
   LOGIN_REQUEST: "LOGIN_REQUEST",
   LOGIN_SUCCESS: "LOGIN_SUCCESS",
   LOGIN_FAILED: "LOGIN_FAILED",
   LOGOUT_SUCCES: "LOGOUT_SUCCES",
+  SIGNIN_SUCCES: "SIGNIN_SUCCES",
 };
 
 export const tabContants = {

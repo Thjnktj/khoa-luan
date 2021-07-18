@@ -21,6 +21,7 @@ const reducer = (state = initialState, action) => {
     default:
       return state;
   }
+  console.log("state", state.tabs);
   return state;
 };
 

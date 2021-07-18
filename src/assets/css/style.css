@@ -251,7 +251,7 @@ label #icon2 {
 }
 
 .link_tab {
-  color: black;
+  color: black !important;
 }
 
 /* .link_tab:hover {
@@ -347,12 +347,12 @@ i.ant-menu-submenu-arrow {
   background-color: #4680ff !important;
   padding-left: 10px;
   margin: 5px  ;
-  color: #fff;
+  color: #fff !important;
    
 }
 
 .menu a:hover {
-  color: #fff;
+  color: #fff !important;
 }
 
 
@@ -373,11 +373,11 @@ i.ant-menu-submenu-arrow {
 }
 
 .profile_menu a {
-  color: #000;
+  color: #000 !important;
 }
 
 .menu .menu-logo p {
-  color: #fff;
+  color: #fff !important;
   font-weight: 500;
   font-size: 16px;
   margin-left: 10px;

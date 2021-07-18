@@ -7,7 +7,7 @@ import {
   LogoutOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { isLogOut } from "../redux/actions";
 
@@ -17,11 +17,13 @@ function Dashboard() {
   const [showMenu, setShowMenu] = useState(false);
   const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const clickLogout = () => {
     setTimeout(() => {
       dispatch(isLogOut());
       message.success("Đăng xuất thành công!", 2);
+      history.push("/");
     }, 1500);
   };
   return (
@@ -72,7 +74,7 @@ function Dashboard() {
                   <div>
                     <LogoutOutlined />
                   </div>
-                  <Link onClick={clickLogout}>Đăng xuất</Link>
+                  <Link onClick={clickLogout} to="/">Đăng xuất</Link>
                 </li>
               </div>
             </ul>

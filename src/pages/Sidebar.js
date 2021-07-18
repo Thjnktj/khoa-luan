@@ -6,9 +6,8 @@ import {
   SearchOutlined,
 } from "@ant-design/icons";
 import { Link, useRouteMatch } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Product from "./Product";
-import { createTab } from "../redux/actions";
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
@@ -16,9 +15,28 @@ const { SubMenu } = Menu;
 function Sidebar() {
   const user = useSelector((state) => state.auth.user);
   const sidebar = useSelector((state) => state.products.sidebar);
-  const tabs = useSelector((state) => state.tabs.tabs);
+  const listTab = useSelector((state) => state.products.tabs);
 
-  const dispatch = useDispatch();
+  const [newTab, setNewTab] = useState();
+
+  const handleClick = (item) => {
+    const tabs = window.sessionStorage.getItem("tabs");
+    const dat = JSON.parse(tabs).data;
+    const find = dat.filter((i) => i === item.url);
+    if (find.length === 0) {
+      window.sessionStorage.tabs = JSON.stringify({ data: [...dat, item.url] });
+    }
+
+    let newProduct = [];
+    const data = JSON.parse(window.sessionStorage.getItem("tabs")).data;
+    data.forEach((el) => {
+      const search = listTab.filter((item) => item.url === el);
+      newProduct.push(search[0]);
+    });
+    console.log("new", newProduct);
+    setNewTab(item);
+  };
+  console.log(newTab);
 
   let match = useRouteMatch();
   const [searchSidebar, setSearchSidebar] = useState("");
@@ -39,7 +57,7 @@ function Sidebar() {
                     <Menu.Item
                       key={Number(index) + 10}
                       path={item.url}
-                      onClick={() => dispatch(createTab(item))}
+                      onClick={() => handleClick(item)}
                     >
                       <Link
                         key={item.id}
@@ -56,7 +74,7 @@ function Sidebar() {
               <Menu.Item
                 key={Number(index) + 100}
                 path={text.url}
-                onClick={() => dispatch(createTab(text))}
+                onClick={() => handleClick(text)}
               >
                 <Link
                   key={text.id}
@@ -105,8 +123,8 @@ function Sidebar() {
             {renderProductList(sidebar)}
           </Menu>
         </Sider>
-        {tabs.length > 0 ? (
-          <Product />
+        {newTab ? (
+          <Product data={newTab} />
         ) : (
           <div className="sidebar_image">
             <img
